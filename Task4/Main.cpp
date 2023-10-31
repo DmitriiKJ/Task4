@@ -34,7 +34,7 @@ struct bites
 
 union byte
 {
-	char symbol;
+	unsigned char symbol;
 	bites bit;
 };
 
@@ -101,7 +101,7 @@ bool max_lenght_bites(byte* arr) // 2.2
 	return true;
 }
 
-bool poker(byte* arr) // 2.4
+bool poker(byte* arr) // 2.3
 {
 	int summ = 0;
 	for (int i = 0; i < pow(2, 4); i++)
@@ -120,11 +120,10 @@ bool poker(byte* arr) // 2.4
 				count++;
 			}
 		}
-		cout << count << endl;
 		summ += pow(count, 2);
 	}
 	double X3 = (pow(2, 4) / (Length * 2)) * summ - (Length * 2);
-	cout << X3 << endl;
+
 	if (X3 >= 1.03 && X3 <= 57.4)
 	{
 		return true;
